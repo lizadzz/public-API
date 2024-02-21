@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Joke API</title>
+  <style>
+    .spacer {
+      margin-bottom: 20px; /* Adjust the margin as needed for your layout */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Let's joke about you ✌️</h1>
+
+    <form action="/" id="form" class="form" method="POST">
+      <label for="name">Your name:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit" class="form-submit">Go</button>
+    </form>
+
+    <div class="spacer"></div>
+
+    <% if (locals.error) { %>
+      <p><%= locals.error %></p>
+    <% } else if (locals.data && locals.data.joke) { %>
+      <p><%= locals.data.joke %></p>
+    <% } %>
+  </div>
+</body>
+
+</html>
